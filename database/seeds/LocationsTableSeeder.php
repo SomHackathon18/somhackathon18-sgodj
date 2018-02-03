@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Location;
 use Illuminate\Database\Seeder;
 
 class LocationsTableSeeder extends Seeder
@@ -11,15 +12,18 @@ class LocationsTableSeeder extends Seeder
      */
     public function run()
     {
-        /*
-        Location::create([
-            'access_code' => placeholder;
-            'address' => placeholder;
-            'epigraph_iae' => placeholder;
-            'epigraph_desc' => placeholder;
-            'lat' => placeholder;
-            'lng' => placeholder;
-        ]);
-        */
+        $csv = array_map( 'str_getcsv', file( public_path('act_comercial.csv') ) );
+        
+        foreach ($csv as $row)
+        {
+            Location::create([
+                'access_code' => $row[0],
+                'address' => utf8_encode($row[1]),
+                'epigraph_iae' => $row[2],
+                'epigraph_desc' => utf8_encode($row[3]),
+                'lat' => floatval(str_replace(',', '.', $row[4])),
+                'lng' => floatval(str_replace(',', '.', $row[5])),
+            ]);
+        }
     }
 }

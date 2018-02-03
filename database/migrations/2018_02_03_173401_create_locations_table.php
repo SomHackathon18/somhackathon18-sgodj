@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Locations extends Migration
+class CreateLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,8 +19,9 @@ class Locations extends Migration
             $table->string('address')->nullable();
             $table->string('epigraph_iae')->nullable();
             $table->string('epigraph_desc')->nullable();
-            $table->string('lat');
-            $table->string('lng');
+            $table->double('lat');
+            $table->double('lng');
+            $table->timestamps();
         });
     }
 
