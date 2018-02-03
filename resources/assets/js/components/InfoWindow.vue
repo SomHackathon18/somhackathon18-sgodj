@@ -10,38 +10,15 @@
         </div>
 
         <div class="info-window-content">
-            <p>
-                <span v-for="tag in location.tags">{{ tag.name }} </span>
-                <span v-if="!location.tags">Sin etiquetas</span>
-            </p>
 
             <div class="info-window-options">
-                <button 
-                    class="attach-button centered-items" 
-                    v-if="location.hasOwnProperty('inLesson') && !location.inLesson && $parent.editMode" 
-                    @click="attachLocation(location)">
-                    <i class="icon-plus"></i>
-                </button>
-                <button 
-                    class="detach-button centered-items" 
-                    v-if="location.hasOwnProperty('inLesson') && location.inLesson && $parent.editMode" 
-                    @click="detachLocation(location)">
-                    <i class="icon-minus"></i>
-                </button>
-                <button class="show-street-view-button centered-items" :title="__('maps.info-window.show-street-view')">
-                    <i v-if="$parent.editMode" class="icon-street-view"></i>
-                    <i v-else class="icon-vr-glasses-filled"></i>
-                </button>
+                <!-- CODE HERE -->
             </div>
 
         </div>
 
         <div class="info-window-close centered-items">
             <i class="icon-cross"></i>
-        </div>
-
-        <div class="bg">
-            <div class="tail"></div>
         </div>
 
     </div>
@@ -62,19 +39,7 @@
             this.initializeBus();
             
             // Event delegation
-            $('#map').on('click', '.info-window .show-street-view-button', () => {
-                if (this.$parent.editMode) {
-                    bus.$emit('show-street-view', this.location);
-                }else{
-                    window.location = window.location.href + '/location/' + this.location.id;
-                }
-            }).on('click', '.info-window-close', () => {
-                this.close();
-            }).on('click', '.attach-button', () => {
-                bus.$emit('attach-location', this.location);
-                this.close();
-            }).on('click', '.detach-button', () => {
-                bus.$emit('detach-location', this.location);
+            $('#map').on('click', '.info-window-close', () => {
                 this.close();
             });
         },
