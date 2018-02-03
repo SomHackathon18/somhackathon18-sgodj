@@ -33,7 +33,18 @@ class Order extends Model
     | SCOPES
     |--------------------------------------------------------------------------
     */
-
+    public function scopePending( $query )
+    {
+        return $query->where('completed', false);
+    }
+    public function scopeCompleted( $query )
+    {
+        return $query->where('completed', true);
+    }
+    public function scopeAvailable( $query )
+    {
+        return $query->where('attendant_id', null);
+    }
     /*
     |--------------------------------------------------------------------------
     | ACCESORS
