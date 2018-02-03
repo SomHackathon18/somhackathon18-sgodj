@@ -3,7 +3,7 @@
 
     <v-toolbar-side-icon></v-toolbar-side-icon>
 
-    <v-toolbar-title class="white--text">{{ config('app.name') }}</v-toolbar-title>
+    <v-toolbar-title class="white--text">{{ config('') }}</v-toolbar-title>
 
     <v-spacer></v-spacer>
 

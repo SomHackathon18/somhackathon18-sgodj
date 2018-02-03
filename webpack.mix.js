@@ -16,5 +16,3 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .styles([
         'node_modules/vuetify/dist/vuetify.min.css'
     ], 'public/css/all.css');
-
-mix.browserSync('hackathon.test');

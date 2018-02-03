@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <div class="">
+    <div>
         <v-btn color="light-blue" href="{{ url('/auth/twitter') }}" dark>
             <v-icon dark left>fa-twitter</v-icon>
             Twitter
