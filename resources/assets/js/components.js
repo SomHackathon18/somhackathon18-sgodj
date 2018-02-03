@@ -1,0 +1,1 @@
+Vue.use('example-component', require('./components/ExampleComponent.vue'));
