@@ -28,7 +28,8 @@ var drawer = null;
 const app = new Vue({
     el: '#app',
     data: {
-    	drawer:null,
+        drawer:null,
+        active:null,
+    	tabs:null,
     },
-
 });
