@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
 <!-- Styles -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
 <!-- CSRF Token -->
