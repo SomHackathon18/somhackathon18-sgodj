@@ -15,6 +15,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .styles([
         'node_modules/vuetify/dist/vuetify.min.css'
-    ], 'public/css/all.css');
+    ], 'public/css/all.css').sourceMaps();
 
 mix.browserSync('hackathon.test');

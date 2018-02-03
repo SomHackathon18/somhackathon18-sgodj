@@ -12,7 +12,7 @@ window.Vue = require('vue');
 /*
  * Install Vuetify
  */
- 
+
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
@@ -24,8 +24,11 @@ require('./components.js');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
+var drawer = null;
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+    	drawer:null,
+    },
+
 });
