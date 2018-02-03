@@ -12,8 +12,11 @@ window.Vue = require('vue');
 /*
  * Install Vuetify
  */
+ 
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
+
+require('./components.js');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
