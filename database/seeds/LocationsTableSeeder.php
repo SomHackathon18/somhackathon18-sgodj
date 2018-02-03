@@ -21,8 +21,8 @@ class LocationsTableSeeder extends Seeder
                 'address' => utf8_encode($row[1]),
                 'epigraph_iae' => $row[2],
                 'epigraph_desc' => utf8_encode($row[3]),
-                'lat' => floatval(str_replace(',', '.', $row[4])),
-                'lng' => floatval(str_replace(',', '.', $row[5])),
+                'lat' => (double) str_replace(',', '.', $row[4]),
+                'lng' => (double) str_replace(',', '.', $row[5]),
             ]);
         }
     }

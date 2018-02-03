@@ -1,11 +1,9 @@
 <template>
     <div id="google-map">
 
-        <info-window></info-window>
-
-        <google-map-markers></google-map-markers>
-
         <div id="map" class="fill"></div>
+
+        <slot v-if="googleInitialized"></slot>
         
     </div>
 </template>
@@ -24,6 +22,7 @@
         data() {
             return{
                 map: {},
+                googleInitialized: false,
                 currentLat: 0,
                 currentLng: 0,
             }
@@ -41,6 +40,7 @@
 
             GoogleMapsLoader.load( (google) => {
                 this.initializeMap(google);
+                this.googleInitialized = true;
             });
         },
 

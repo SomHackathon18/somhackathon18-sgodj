@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('description')->nullable();
             $table->integer('attendant_id')->unsigned()->nullable();
             $table->string('email')->nullable();
+            $table->boolean('completed')->default(false);
             $table->timestamps();
         });
 
