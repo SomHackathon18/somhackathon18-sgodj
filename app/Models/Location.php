@@ -1,24 +1,18 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Location extends Model
 {
-    use Notifiable;
-
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
     //protected $primaryKey = 'id';
-    // protected $guarded = ['id'];
-    protected $fillable = [
-        'name', 'email', 'password', 'provider', 'provider_id',
-    ];
+    protected $guarded = [];
+    //protected $fillable = ['id', 'user_id', 'completed'];
     // protected $hidden = [];
     // protected $dates = [];
     /*
@@ -26,13 +20,8 @@ class User extends Authenticatable
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function orders()
-    {
+    public function orders() {
         return $this->hasMany(Order::class);
-    }
-    public function servedOrders()
-    {
-        return $this->hasMany(Order::class, 'attendant_id');
     }
     /*
     |--------------------------------------------------------------------------
@@ -51,4 +40,5 @@ class User extends Authenticatable
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+    
 }

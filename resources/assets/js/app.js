@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+window.GoogleMapsLoader = require('google-maps');
+
 window.Vue = require('vue');
 
 /*
@@ -25,10 +27,14 @@ require('./components.js');
  */
 
 var drawer = null;
+
+window.bus = new Vue();
+
 const app = new Vue({
     el: '#app',
     data: {
-    	drawer:null,
+        drawer:null,
+        active:null,
+    	tabs:null,
     },
-
 });
