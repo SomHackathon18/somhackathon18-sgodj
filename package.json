@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.0.0",
+        "browser-sync-webpack-plugin": "^2.0.1",
         "vuetify": "^0.17.7"
     }
 }
