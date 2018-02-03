@@ -1,4 +1,3 @@
-
 @include('layouts.partials.navigation-drawer')
 
 <v-toolbar dark color="primary">

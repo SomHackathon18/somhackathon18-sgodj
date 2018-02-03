@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
+    
 @section('content')
-
+    
     <v-tabs v-model="active" grow class="fill">
         <v-tabs-bar class="cyan" dark>
             <v-tabs-slider class="yellow"></v-tabs-slider>
@@ -15,25 +15,23 @@
 
         <v-tabs-items class="fill">
             <v-tabs-content :key="1" id="tab-1" class="fill">
-                <google-map 
+                <google-map
                     api-key="{{ config('services.google.maps.apikey') }}"
                     language="{{ config('app.locale') }}"
-                    region="{{ config('app.region') }}" 
+                    region="{{ config('app.region') }}"
                     class="fill" >
                 </google-map>
             </v-tabs-content>
 
             <v-tabs-content :key="2" id="tab-2" class="fill">
                 <google-map 
-                    api-key="{{ config('services.google.maps.apikey') }}"
-                    language="{{ config('app.locale') }}"
+                    api-key="{{ config('services.google.maps.apikey') }}" 
+                    language="{{ config('app.locale') }}" 
                     region="{{ config('app.region') }}" 
-                    class="fill" >
-                </google-map>
-            </v-tabs-content>
-        </v-tabs-items>
-    </v-tabs>
-
+                    class="fill" > 
+                </google-map> 
+            </v-tabs-content> 
+        </v-tabs-items> 
+    </v-tabs> 
     
-
 @endsection
