@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+
     <div>
         <v-btn color="light-blue" href="{{ url('/auth/twitter') }}" dark>
             <v-icon dark left>fa-twitter</v-icon>
@@ -18,5 +18,5 @@
             Google
         </v-btn>
     </div>
-
+    
 @endsection
