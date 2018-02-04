@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('title');
             $table->string('description')->nullable();
             $table->integer('attendant_id')->unsigned()->nullable();
-            $table->string('email')->nullable();
+            $table->float('reward')->default(0);
             $table->boolean('completed')->default(false);
             $table->timestamps();
         });

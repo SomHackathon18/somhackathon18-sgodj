@@ -54,7 +54,7 @@
             </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="" href="/logout">
+        <v-list-tile href="{{ route('logout') }}">
             <v-list-tile-action>
                 <v-icon>fa-sign-out</v-icon>
             </v-list-tile-action>

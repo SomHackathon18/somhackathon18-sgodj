@@ -14,10 +14,11 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/orders/create', 'OrdersController@create')->name('create-order');
+Route::post('/orders', 'OrdersController@store')->name('store-order');
 
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Auth::routes();
