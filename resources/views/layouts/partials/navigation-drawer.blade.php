@@ -1,7 +1,7 @@
 
 <v-navigation-drawer fixed v-model="drawer" app>
     
-    <v-toolbar>
+    <v-toolbar color="grey lighten-4">
         <v-list class="pa-0">
             <v-list-tile avatar>
                 <v-list-tile-avatar>
@@ -24,23 +24,23 @@
 
         <v-list-tile>
             <v-list-tile-action>
-                <v-icon>fa-bitcoin</v-icon>
+                <v-icon>fa-handshake</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
-                <v-list-tile-title>{{ Auth::user()->wallet }}</v-list-tile-title>
+                <v-list-tile-title>{{ Auth::user()->wallet }} points</v-list-tile-title>
             </v-list-tile-content>
         </v-list-tile>
         <br>
         <v-divider></v-divider>
         <br>
-        <v-list-tile>
+        <v-list-tile href="{{ route('home') }}">
             <v-list-tile-action>
-                <v-icon>fa-user</v-icon>
+                <v-icon>fa-map</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
-                <v-list-tile-title>Profile</v-list-tile-title>
+                <v-list-tile-title>Home</v-list-tile-title>
             </v-list-tile-content>
         </v-list-tile>
 
@@ -54,9 +54,39 @@
             </v-list-tile-content>
         </v-list-tile>
 
+        <v-list-tile href="{{ route('index-order') }}">
+            <v-list-tile-action>
+                <v-icon>fa-tasks</v-icon>
+            </v-list-tile-action>
+
+            <v-list-tile-content>
+                <v-list-tile-title>Orders history</v-list-tile-title>
+            </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile href="{{ route('home') }}">
+            <v-list-tile-action>
+                <v-icon>fa-tags</v-icon>
+            </v-list-tile-action>
+
+            <v-list-tile-content>
+                <v-list-tile-title>My discounts</v-list-tile-title>
+            </v-list-tile-content>
+        </v-list-tile>
+        
+        <v-list-tile href="{{ route('home') }}">
+            <v-list-tile-action>
+                <v-icon>fa-user</v-icon>
+            </v-list-tile-action>
+
+            <v-list-tile-content>
+                <v-list-tile-title>My profile</v-list-tile-title>
+            </v-list-tile-content>
+        </v-list-tile>
+
         <v-list-tile href="{{ route('logout') }}">
             <v-list-tile-action>
-                <v-icon>fa-sign-out</v-icon>
+                <v-icon>fa-sign-out-alt</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>

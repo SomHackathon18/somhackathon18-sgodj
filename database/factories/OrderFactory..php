@@ -7,6 +7,5 @@ $factory->define(Order::class, function (Faker $faker) {
         'location_id' => $faker->numberBetween(1, 100),
         'title' => $faker->word,
         'description' => $faker->paragraph(1),
-        'email' => $faker->unique()->safeEmail,
     ];
 });

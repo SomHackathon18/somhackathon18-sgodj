@@ -15,6 +15,7 @@
             latitude: { required: true, type: Number },
             longitude: { required: true, type: Number },
             icon: { required: true, type: String },
+            iconSize: { required: false, type: Number, default: 30 },
         },
 
         data() {
@@ -37,7 +38,7 @@
             addMarker: function () {
                 let icon = {
                     url: this.icon,
-                    scaledSize: new google.maps.Size(30,30), 
+                    scaledSize: new google.maps.Size(this.iconSize, this.iconSize), 
                     origin: new google.maps.Point(0,0),
                     anchor: new google.maps.Point(0, 0)
                 };

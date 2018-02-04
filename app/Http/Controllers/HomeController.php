@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $orders = Order::available()->get();
-        $locations = Location::take(100)->get();
+        $locations = Location::take(150)->get();
         return view( 'home', compact('orders', 'locations') );
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div>
+    <v-flex>
         <v-btn color="light-blue" href="{{ url('/auth/twitter') }}" dark>
             <v-icon dark left>fa-twitter</v-icon>
             Twitter
@@ -17,6 +17,6 @@
             <v-icon dark left>fa-google</v-icon>
             Google
         </v-btn>
-    </div>
+    </v-flex>
     
 @endsection

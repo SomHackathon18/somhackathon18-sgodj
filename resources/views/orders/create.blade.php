@@ -18,8 +18,8 @@
                     prepend-icon="fa-briefcase"
                     autocomplete></v-select>
                     <v-text-field label="Reward" name="reward" :value="0"></v-text-field>
-                    <v-btn color="info" type="submit">
-                      Send
+                    <v-btn block color="info" type="submit">
+                        Send
                     </v-btn>
                 </v-flex>
             </v-layout>

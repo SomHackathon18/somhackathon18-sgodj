@@ -13,9 +13,11 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/orders', 'OrdersController@index')->name('index-order');
 Route::get('/orders/create', 'OrdersController@create')->name('create-order');
 Route::post('/orders', 'OrdersController@store')->name('store-order');
 Route::get('/orders/{id}', 'OrdersController@show')->name('show-order');
+Route::get('/orders/{id}/attach', 'OrdersController@update')->name('update-order');
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');

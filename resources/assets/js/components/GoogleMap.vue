@@ -4,6 +4,8 @@
         <div id="map" class="fill"></div>
 
         <slot v-if="google"></slot>
+
+        <google-map-marker v-if="currentLat != 0" :latitude="currentLat" :longitude="currentLng" title="You are currently here" icon="/images/marker-user.png" :icon-size="50"></google-map-marker>
         
     </div>
 </template>
@@ -17,6 +19,7 @@
             region: String,
             language: String,
             streetView: Boolean,
+            zoom: { required: false, type: Number, default: 16},
         },
 
         data() {
@@ -55,7 +58,7 @@
                 }];
                 
                 this.map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 16,
+                    zoom: this.zoom,
                     minZoom: 5,
                     tilt: 0,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -82,6 +85,7 @@
                     lat: this.currentLat,
                     lng: this.currentLng,
                 });
+                this.map.setZoom(this.zoom);
             },
 
             initializeBus: function (google) {

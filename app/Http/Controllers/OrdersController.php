@@ -19,6 +19,13 @@ class OrdersController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $orders = Order::where( 'user_id', Auth::user()->id )->get();
+
+        return view( 'orders.index', compact('orders') );
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -49,5 +56,14 @@ class OrdersController extends Controller
 
         //$order = $order->with('location');
         return view( 'orders.show', compact('order') );
+    }
+
+    public function update ($id)
+    {
+        $order = Order::find($id)->first();
+        $order->attendant_id = Auth::user()->id;
+        $order->save();
+        
+        return redirect()->route('home');
     }
 }

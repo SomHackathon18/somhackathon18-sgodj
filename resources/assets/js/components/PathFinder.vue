@@ -1,15 +1,16 @@
 
 <template>
-    <div>
-        <v-subheader class="grey--text">The distance is:
-        <v-subheader class="black--text">{{distance}}</v-subheader>  
-        </v-subheader>  
+    <v-list-tile avatar>
+        <v-list-tile-avatar>
+            <v-icon>fa-clock</v-icon>
+        </v-list-tile-avatar>
 
-        <v-subheader class="grey--text">The duration of the travel is:
-        <v-subheader class="black--text">{{duration}}</v-subheader>  
-        </v-subheader>  
+        <v-list-tile-content>
+            <v-list-tile-title v-if="duration">At <strong>{{ duration }}</strong> walking</v-list-tile-title>
+            <v-list-tile-sub-title v-if="distance">{{ distance }} from your position</v-list-tile-sub-title>
+        </v-list-tile-content>
 
-    </div>
+    </v-list-tile>
 </template>
 
 <script>
