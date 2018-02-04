@@ -21,7 +21,7 @@
                     region="{{ config('app.region') }}"
                     class="fill" >
                     @foreach ($locations as $location)
-                        <google-map-marker :latitude="{{ $location->lat }}" :longitude="{{ $location->lng }}" title="{{ $location->title }}" icon="{{ public_path('images/marker.png') }}"></google-map-marker>
+                        <google-map-marker :latitude="{{ $location->lat }}" :longitude="{{ $location->lng }}" title="{{ $location->epigraph_desc }}" icon="images/marker.png"></google-map-marker>
                     @endforeach
                 </google-map>
             </v-tabs-content>
