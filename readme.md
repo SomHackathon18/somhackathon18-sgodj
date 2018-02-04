@@ -4,7 +4,7 @@ Collaby és una plataforma social de dinàmica col·laboraria, facilita l’inte
 
 Implementa el concepte de la cadena de favors. Basat en un sistema de tasques compartides, oferta de serveis voluntaris en funció de proximitat i un sistema de recompenses socials. 
 
-Tecnologia de desenvolupament:
+## Tecnologia de desenvolupament:
 
 - Aplicació Web responsive.
 - Implementat en Vue.js i Laravel.
@@ -12,9 +12,16 @@ Tecnologia de desenvolupament:
 - Utilitza API Google Maps.
 - Utilització de OpenData.
 
+## Organització de l'aplicació
 
+Hem utilitzat composer, que és un gestor de llibreries. Hem també utilitzat vagrant, que és un repositori de màquines virtuals, i afegint la màquina virtual que ens interesava, que és laravel homestead. Amb aquesta máquina virtual podem sincronitzar tot el projecte amb la nostre màquina i així tenir-ho tot estandaritzat, evitant problemes de canvis de versions i compatiblitat.
 
+Dintre de la carpeta /resources/views, els arxius blade son els que organitzen la vista de l'aplicació. A la part de /database/migrations, tenim la migració a la base de dades que es puja amb les comandes corresponents. Utilitzem bases de dades SQL, amb mySQL com a hosting local.
 
+Tenim part de google maps amb crides a API fetes amb javascript, concretament VUE, que esta integrat amb laravel, així podem fer un seguiment de les rutes, de les comandes a realitzar, realitzades i la nostre posició. Aquests documents estan a /resources/assets/js, que son components que s'importen a la vista.
+
+<br>
+<br>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -39,38 +46,3 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
