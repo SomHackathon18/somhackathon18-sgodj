@@ -31,7 +31,7 @@
                 @foreach ($orders as $order) 
                     <v-list three-line>
                       <div>
-                        <v-list-tile @click="">
+                        <v-list-tile href="{{route('show-order',['order' => $order->id])}}" @click="" >
                           <v-list-tile-avatar>
                             <img />
                           </v-list-tile-avatar>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -27,5 +28,11 @@ class OrdersController extends Controller
         $locations = Location::all();
 
         return view( 'orders.create', compact('locations') );
+    }
+    public function show ($id) {
+        $order = Order::findOrFail($id);
+
+        //$order = $order->with('location');
+        return view( 'orders.show', compact('order') );
     }
 }

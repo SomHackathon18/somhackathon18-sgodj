@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -27,6 +28,10 @@ class Order extends Model
     public function attendant()
     {
         return $this->belongsTo(User::class, 'attendant_id');
+    }
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
     /*
     |--------------------------------------------------------------------------
