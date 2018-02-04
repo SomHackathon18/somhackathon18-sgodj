@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/orders/create', 'OrdersController@create')->name('create-order');
 Route::post('/orders', 'OrdersController@store')->name('store-order');
-
+Route::get('/orders/{id}', 'OrdersController@show')->name('show-order');
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
