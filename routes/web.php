@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();

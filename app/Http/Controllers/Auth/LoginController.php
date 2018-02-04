@@ -22,7 +22,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+      use AuthenticatesUsers {
+            logout as performLogout;
+        }
 
     /**
      * Where to redirect users after login.
@@ -50,7 +52,11 @@ class LoginController extends Controller
     {
         return Socialite::driver($provider)->redirect();
     }
-
+    public function logout()
+    {
+        $this->guard()->logout();
+        return redirect()->route('home');
+    }
     /**
      * Obtain the user information from provider.  Check if the user already exists in our
      * database by looking up their provider_id in the database.

@@ -12,8 +12,8 @@ window.GoogleMapsLoader = require('google-maps');
 window.Vue = require('vue');
 
 /*
- * Install Vuetify
- */
+	Install Vuetify
+*/
 
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
