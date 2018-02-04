@@ -30,7 +30,6 @@ class OrdersController extends Controller
 
         return view( 'orders.create', compact('locations') );
     }
-<<<<<<< HEAD
 
     public function store (Request $request)
     {
@@ -43,12 +42,12 @@ class OrdersController extends Controller
         ]);
 
         return redirect()->route('show-order', $order);
-=======
+    }
+
     public function show ($id) {
         $order = Order::findOrFail($id);
 
         //$order = $order->with('location');
         return view( 'orders.show', compact('order') );
->>>>>>> a8885b2cc9b403af235a80b73ea4e9bae9a97d4d
     }
 }
