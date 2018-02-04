@@ -14,9 +14,11 @@
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
-
-    <v-btn icon>
-        <v-icon>search</v-icon>
-    </v-btn>
+    
+    @auth
+        <v-btn icon>
+            <v-icon>search</v-icon>
+        </v-btn>
+    @endauth
 
 </v-toolbar>

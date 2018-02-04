@@ -18,14 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('password', 60)->nullable();
-<<<<<<< HEAD
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
-=======
-            $table->string('provider');
-            $table->string('provider_id');
             $table->string('avatar')->nullable();
->>>>>>> 7afa17eedba0e2cc6346b45951a7ad53e5fc7680
+            $table->float('wallet')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
