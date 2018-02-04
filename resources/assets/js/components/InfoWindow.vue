@@ -5,7 +5,7 @@
         <div class="info-window-header">
             <h5>
                 <i class="icon-marker"></i>
-                {{ location.name }}
+                Title
             </h5>
         </div>
 
@@ -30,8 +30,7 @@
 
         data() {
             return{
-                infoWindow: {},
-                location: {}
+                infoWindow: {}
             }
         },
 
@@ -48,12 +47,8 @@
 
             initializeBus: function () {
 
-                bus.$on('map-initialized', (google) => {
-                    this.initializeInfoWindow(google);
-                });
-
-                bus.$on('marker-click', (marker, location) => {
-                    this.open(marker, location);
+                bus.$on('marker-click', (marker) => {
+                    this.open(marker);
                 });
             },
 
@@ -71,12 +66,10 @@
                 });
             },
 
-            open: function (marker, location) {
-                this.location = location;
-
+            open: function (marker) {
                 Vue.nextTick( () => {
                     this.infoWindow.setContent('<div class="info-window">'+$('#iw-template').html()+'</div>');
-                    this.infoWindow.open(this.$parent.map, marker);
+                    this.infoWindow.open(this.$parent.$parent.map, marker);
                 });
             },
 

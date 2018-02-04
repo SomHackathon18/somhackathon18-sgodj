@@ -1,11 +1,17 @@
 
-@include('layouts.partials.navigation-drawer')
+@auth
+    @include('layouts.partials.navigation-drawer')
+@endauth
 
 <v-toolbar dark color="primary">
     
-    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    @auth
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    @endauth
 
-    <v-toolbar-title class="white--text">{{ config('app.name') }}</v-toolbar-title>
+    <v-toolbar-title class="white--text">
+        {{ config('app.name') }}
+    </v-toolbar-title>
 
     <v-spacer></v-spacer>
 

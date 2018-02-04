@@ -3,7 +3,7 @@
 
         <div id="map" class="fill"></div>
 
-        <slot v-if="googleInitialized"></slot>
+        <slot v-if="google"></slot>
         
     </div>
 </template>
@@ -22,7 +22,7 @@
         data() {
             return{
                 map: {},
-                googleInitialized: false,
+                google: null,
                 currentLat: 0,
                 currentLng: 0,
             }
@@ -40,7 +40,7 @@
 
             GoogleMapsLoader.load( (google) => {
                 this.initializeMap(google);
-                this.googleInitialized = true;
+                this.google = google;
             });
         },
 
@@ -85,11 +85,8 @@
             },
 
             initializeBus: function (google) {
-
                 bus.$emit('map-initialized', google);
-
             },
-
         }
     }
 </script>
