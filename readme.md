@@ -1,3 +1,21 @@
+## COLLABY
+
+Collaby és una plataforma social de dinàmica col·laboraria, facilita l’intercanvi  mutu de serveis de proximitat entre usuaris, reduint així desplaçaments innecessaris minimitzant les congestions de tràfic i persones, promovent la cohesió ciutadana i convivència entre comunitats.
+
+Implementa el concepte de la cadena de favors. Basat en un sistema de tasques compartides, oferta de serveis voluntaris en funció de proximitat i un sistema de recompenses socials. 
+
+Tecnologia de desenvolupament:
+
+- Aplicació Web responsive.
+- Implementat en Vue.js i Laravel.
+- Programari lliure incloses les lliberies.
+- Utilitza API Google Maps.
+- Utilització de OpenData.
+
+
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
