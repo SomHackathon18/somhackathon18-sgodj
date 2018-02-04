@@ -28,7 +28,22 @@
 
             <v-tabs-content :key="2" id="tab-2" class="fill">
 
-                
+                @foreach ($orders as $order) 
+                    <v-list three-line>
+                      <div>
+                        <v-list-tile @click="">
+                          <v-list-tile-avatar>
+                            <img />
+                          </v-list-tile-avatar>
+                          <v-list-tile-content>
+                            <v-list-tile-title > {{$order->title}} </v-list-tile-title>
+                            <v-list-tile-sub-title > {{$order->description}} </v-list-tile-sub-title>
+                          </v-list-tile-content>
+                        </v-list-tile>
+                      </div>
+                    </v-list>
+                  @endforeach
+
             </v-tabs-content>
         </v-tabs-items>
     </v-tabs>
