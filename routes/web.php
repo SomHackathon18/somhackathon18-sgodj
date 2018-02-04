@@ -13,6 +13,9 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/orders/create', 'OrdersController@create')->name('create-order');
+
+
 Auth::routes();
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');

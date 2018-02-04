@@ -33,7 +33,7 @@ window.bus = new Vue();
 const app = new Vue({
     el: '#app',
     data: {
-        drawer:null,
+        drawer:false,
         active:null,
     	tabs:null,
     },

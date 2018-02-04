@@ -28,7 +28,7 @@
             </v-list-tile-action>
 
             <v-list-tile-content>
-                <v-list-tile-title>000</v-list-tile-title>
+                <v-list-tile-title>{{ Auth::user()->wallet }}</v-list-tile-title>
             </v-list-tile-content>
         </v-list-tile>
         <br>
@@ -44,7 +44,7 @@
             </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile>
+        <v-list-tile href="{{ route('create-order') }}">
             <v-list-tile-action>
                 <v-icon>fa-plus</v-icon>
             </v-list-tile-action>
